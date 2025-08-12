@@ -13,7 +13,7 @@ class IndexView(TemplateView):
         context = super().get_context_data(**kwargs)
         context['categories'] = Category.objects.all() # Обращаемся ко всем категориям
         context['current_category'] = None
-        return 
+        return context
     
     # Метод для получения шаблонов
     def get(self, request, *args, **kwargs):
@@ -29,7 +29,7 @@ class CatalogView(TemplateView):
         'color': lambda queryset, value: queryset.filter(color__iexact=value),
         'min_price': lambda queryset, value: queryset.filter(price_gte=value),
         'max_price': lambda queryset, value: queryset.filter(price_lte=value),
-        'size': lambda queryset, value: queryset.filter(product_size__size__name=value),
+        'size': lambda queryset, value: queryset.filter(product_sizes__size__name=value),
     }
 
     def get_context_data(self, **kwargs):
