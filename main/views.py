@@ -101,6 +101,6 @@ class ProductDetailView(DetailView):
         context = self.get_context_data(**kwargs)
         if request.headers.get('HX-Request'):
             return TemplateResponse(request, 'main/product_detail.html', context)
-        raise TemplateResponse(request, self.template_name, context) # Если запрос не от htmx
+        return TemplateResponse(request, self.template_name, context) # Если запрос не от htmx
 
     
