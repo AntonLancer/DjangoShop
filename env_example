@@ -1,0 +1,10 @@
+SECRET_KEY='django-insecure-+27u%0v8!)ygjgrt*=$)gnb#1_627#e4=r8ko(2-v-fx0_uby1'
+
+POSTGRES_DB=DjangoShopDB
+POSTGRES_USER=DjangoShopDB
+POSTGRES_PASSWORD=DjangoShopDB
+POSTGRES_HOST=localhost
+POSTGRES_PORT=5432
+
+STRIPE_SECRET_KEY='your_key'
+STRIPE_WEBHOOK_SECRET='your_secret'
